@@ -1,0 +1,223 @@
+html{
+    font-size: 15px;
+    font-family: 'Kumbh Sans', sans-serif;
+    box-sizing: border-box;
+    color: hsl(240, 6%, 50%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    text-align: left;
+}
+
+body{
+    background: rgb(175,103,233);
+    background: radial-gradient(circle, rgba(175,103,233,1) 89%, rgba(101,101,231,1) 100%);
+}
+
+.container{
+    padding: 3rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "img-box faq-box";
+    max-width: 70rem;
+    background-color: white;
+    border-radius: 1.2rem;
+    height: 35rem;
+    width: 62.9rem;
+    position: relative;
+    
+}
+
+.img-box{
+    grid-area: img-box;
+    overflow: hidden;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-size: 65rem;
+    background-repeat: no-repeat;
+    background-position: -37rem -20rem;
+    
+}
+
+.woman-img{
+    position:relative;
+    left: -5rem;
+    top: 4.1rem;
+    z-index: 20;
+}
+
+.red-box-img{
+    position: absolute;
+    z-index: 500;
+    top: 13.1rem;
+    left: -6rem;
+
+    
+}
+
+.faq-box{
+    grid-area: faq-box;
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 5rem 5rem 0;
+}
+
+.faq-box h1{
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.faq-box ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-box li{
+    border-bottom: 1px solid hsl(240, 5%, 91%) ;
+}
+
+.li-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.question{
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: .7rem;
+    margin-bottom: .7rem;
+}
+
+.question:hover{
+    color: hsl(14, 88%, 65%);
+}
+
+.active{
+    color: black;
+}
+
+.arrow-icon{
+    width: 0.9rem;
+    height: 0.6rem;
+    margin-left: auto;
+    margin-right: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+
+}
+
+.rotate{
+    transform: rotate(180deg);
+
+}
+
+.response{
+    font-size: 0.9rem;
+    width: 80%;
+    line-height: 1.3rem;  
+    height:0;
+    overflow: hidden;
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.visible{
+    opacity: 1;
+    height: auto;
+    overflow:auto;
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+@media (max-width: 929px){
+
+    html{
+        font-size: 13.5px;
+    }
+
+    .container{
+        padding: 1.5rem;
+    }
+
+    .card{
+        grid-template-columns: 1fr;
+        grid-template-areas: "img-box"
+                             "faq-box";
+        height: 38rem;
+        width: 28rem;
+        padding: 0 2rem 3rem 2rem;
+        margin-top: 10rem;
+        margin-bottom: 4rem;
+    }
+
+    .img-box{
+        overflow:visible;
+        height: 10rem;
+        background-image: url(images/bg-pattern-mobile.svg);
+        background-size: 20rem;
+        background-repeat: no-repeat;
+        background-position: 50% -20%;
+        width: 100%;
+        text-align: center;
+        
+
+
+    }
+
+    .woman-img{
+        src: url(images/illustration-woman-online-mobile.svg);
+        height: 15rem;
+        top: -9rem;
+        left: 0;
+        right: 0;
+       
+
+ 
+    }
+    
+    .red-box-img{
+        height: 7rem;
+        top: -3rem;
+        left: 3.5rem;
+    }
+
+    .faq-box{
+        margin: 0.3rem 0;
+        align-items: center;
+        height: 28rem;
+
+    }
+
+    .faq-box h1{
+        font-size: 2.5rem;
+    }
+
+    .arrow-icon{
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .response{
+        width: 90%;
+    }
+
+
+}
